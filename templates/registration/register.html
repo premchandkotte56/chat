@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://www.poweradmin.com/blog/wp-content/uploads/2020/06/2-5-scaled.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #s {
+            text-align: center;
+            margin-top: 100px;
+            color: aliceblue;
+            font-size: 2em;
+            margin-right:1200px ; /* Initially positioned outside the viewport */
+             
+        }
+        #main {
+            width: 300px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(3, 3, 3, 0.3);
+            background: rgba(255, 255, 255, 0.7);
+            border: 2px solid black;
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-right:1400px ; /* Initially positioned outside the viewport */
+        
+        }
+        /* Input styles */
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: all 0.3s ease-in-out;
+        }
+        /* Button styles */
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        /* Keyframe animations */
+        @keyframes slideInRight {
+            from {
+                margin-left: 100%; /* Initially positioned outside the viewport */
+                opacity: 0;
+            }
+            to {
+                margin-left: 0; /* Slide in to the left */
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 id="s">Register Page</h1>
+    <div id="main">
+        <form method="post">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+    
+            <label for="password1">Password:</label>
+            <input type="password" id="password1" name="password1">
+    
+            <label for="password2">Confirm Password:</label>
+            <input type="password" id="password2" name="password2">
+    
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
